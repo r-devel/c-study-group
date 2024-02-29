@@ -1,0 +1,1 @@
+The "debug" exercise is skipped as the focus is on the debugging process rather than the final solution.
