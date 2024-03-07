@@ -19,7 +19,7 @@ string replace(string str)
 {
     for (int i = 0, n = strlen(str); i < n; i++)
     {
-        switch (str[i])
+        switch (tolower(str[i]))
         {
             case 'a':
                 str[i] = '6';
