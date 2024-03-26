@@ -1,0 +1,1 @@
+Lab 3 https://cs50.harvard.edu/x/2023/labs/3/ just explored run times of different algorithms.
