@@ -58,22 +58,17 @@ int main(int argc, char *argv[])
         strcpy(plates[idx], buffer);
         idx++;
     }
-
+    
+    // print plates and free memory
     for (int i = 0; i < 8; i++)
     {
         printf("%s\n", plates[i]);
+        free(plates[i]);
     }
 
     // FREE MEMORY
     // close files
     fclose(infile);
 
-    // free malloc'ed memory
-    // can't do this until after plates have printed (i.e. not in while loop)
-    // so we need another loop to make sure we free the memory for each element of plates
-    for (int i = 0; i < idx; i++)
-    {
-        free(plates[i]);
-    }
     // running valgrind confirms all memory now freed
 }
