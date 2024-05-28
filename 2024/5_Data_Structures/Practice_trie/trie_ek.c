@@ -129,14 +129,7 @@ bool check(char *word)
     }
 
     // at end of name, check we've found word
-    if (cursor->is_word)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return cursor->is_word;
 }
 
 // Unload trie from memory
