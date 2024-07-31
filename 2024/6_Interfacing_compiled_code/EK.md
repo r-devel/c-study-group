@@ -10,6 +10,6 @@ It is easier for this session to link to repos on my own GitHub account, since b
 
 ## crle
 
-- <https://github.com/EllaKaye/cpackagedemo>
+- <https://github.com/EllaKaye/crle>
 
 - An R package which contains the C implementation of `c_rle()` and an R wrapper function. Same function as in package above, but this time practicing creating the entire package structure around it from scratch (following the [Now You C Me](https://blog.davisvaughan.com/posts/2019-03-02-now-you-c-me/) blog post by Davis Vaughn.)
