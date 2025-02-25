@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <math.h>
 
 bool prime(int number);
 
@@ -33,11 +34,12 @@ bool prime(int number)
     if (number == 1)
     {
         return false;
-    
-    for (int i = 2; i < number; i++)
+    }
+
+    for (int i = 2; i <= sqrt(number); i++)
     {
         // if the number % i is 0 (i.e. false), the number is not prime
-        // in this case, !(number % i) is true
+        // in this case, !(number % i) is true, so can return false
         if (!(number % i))
         {
             return false;
