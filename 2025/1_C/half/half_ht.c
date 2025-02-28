@@ -1,45 +1,23 @@
+// Calculate your half of a restaurant bill
+// Data types, operations, type casting, return value
+
 #include <cs50.h>
 #include <stdio.h>
 
-bool prime(int number);
+float half(float bill, float tax, int tip);
 
 int main(void)
 {
-    int min;
-    do
-    {
-        min = get_int("Minimum: ");
-    }
-    while (min < 1);
+    float bill_amount = get_float("Bill before tax and tip: ");
+    float tax_percent = get_float("Sale Tax Percent: ");
+    int tip_percent = get_int("Tip percent: ");
 
-    int max;
-    do
-    {
-        max = get_int("Maximum: ");
-    }
-    while (min >= max);
-
-    for (int i = min; i <= max; i++)
-    {
-        if (prime(i))
-        {
-            printf("%i\n", i);
-        }
-    }
+    printf("You will owe $%.2f each!\n", half(bill_amount, tax_percent, tip_percent));
 }
 
-bool prime(int number)
+float half(float bill, float tax, int tip)
 {
-    // 1 not prime
-    if (number == 1)
-        return (false);
-    for (int i = 2; i < number; i++)
-    {
-        int residual = number % i;
-        // if number divisible by i, number is not prime
-        if (!residual)
-            return (false);
-    }
-    // if number is not divisible by any integer from 2 to number - 1, it must be prime
-    return (true);
+    float amount = bill * (100 + tax) / 100;
+    amount = (100.0 + tip) / 100 * amount; // use 100.0 to return float to avoid integer division
+    return amount / 2;
 }
